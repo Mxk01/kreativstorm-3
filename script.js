@@ -28,6 +28,11 @@ const playRound = (playerSelection, computerSelection, round = 1) => {
 };
 
 const game = () => {
+    alert(`In a hidden realm, three powerful beings played "The Game of the Elements."
+    Rock, Paper, and Scissors clashed with magical energy, captivating the kingdom.
+    Each element won and lost, teaching unity's value.
+    Their enchanting dance continues, celebrating the magic in diversity.
+    Enjoy the mystical tale of "The Game of the Elements"! 🌟🪨✋✌️`);
     
     for (let i = 1; i <= 5; i++) {
         let playerSelection = prompt("Round " + i + ": Enter your choice (Rock ✊/Paper ✋/Scissors ✌️):");
@@ -40,16 +45,16 @@ const game = () => {
         let roundOutcome = playRound(playerSelection, computerSelection, i);
         alert(roundOutcome);
 
-        if (roundOutcome.startsWith("You won")) scores.player += 1;
-        else if (roundOutcome.startsWith("You Lost")) scores.computer += 1;
+        if (roundOutcome.startsWith("😀")) scores.player ++;
+        else if (roundOutcome.startsWith("😢")) scores.computer++;
     }
-
-    if (playerScore > computerScore) {
+     
+    if (scores.player > scores.computer) {
         alert(`😀 Congratulations! You won the game! The score is: ${scores.player} - ${scores.computer} for you!`);
-    } else if (playerScore < computerScore) {
-        console.log(`😢 Sorry, you lost the game! Opponent has won with a score of ${scores.computer} - ${scores.player}`);
+    } else if (scores.player < scores.computer) {
+        alert(`😢 Sorry, you lost the game! Opponent has won with a score of ${scores.computer} - ${scores.player}`);
     } else {
-        console.log(`😐 The game ended in a tie! Final score: ${scores.computer} - ${scores.player}`);
+        alert(`😐 The game ended in a tie! Final score: ${scores.computer} - ${scores.player}`);
     }
 };
 
